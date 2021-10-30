@@ -1,8 +1,8 @@
 #! /bin/bash
 
 if ((EUID != 0)); then
-    echo "Please run this script with elevated privileges (sudo or root)"
-    exit
+	echo "Please run this script with elevated privileges (sudo or root)"
+	exit
 fi
 
 # get sudo and create dirs
@@ -19,11 +19,10 @@ mkdir -p /opt/helpers
 # yellow text support
 
 cecho() {
-        YELLOW="\033[1;33m"
-  NC="\033[0m" # No Color
-        printf "${!1}${2} ${NC}\n"
+	YELLOW="\033[1;33m"
+	NC="\033[0m" # No Color
+	printf "${!1}${2} ${NC}\n"
 }
-
 
 # installing  tools
 apt-get update -y
@@ -36,9 +35,9 @@ apt-get -y install python3-pip
 
 cecho "Installing helpesr and QoL stuff"
 go get -u github.com/tomnomnom/gron
-echo 'alias norg="gron --ungron' >> ~/.zshrc
-echo 'alias ungron="gron --ungron"' >> ~/.zshrc
-cd /opt/helpers && git clone https://github.com/tomnomnom/gf.git && echo 'source /opt/helpers/gf/gf-completion.zsh' >> ~/.zshrc
+echo 'alias norg="gron --ungron' >>~/.zshrc
+echo 'alias ungron="gron --ungron"' >>~/.zshrc
+cd /opt/helpers && git clone https://github.com/tomnomnom/gf.git && echo 'source /opt/helpers/gf/gf-completion.zsh' >>~/.zshrc
 
 cecho "Installing zsh"
 apt-get -y install zsh
@@ -74,14 +73,13 @@ git clone https://github.com/devanshbatham/ParamSpider
 git clone https://github.com/Ebryx/S3Rec0n
 git clone https://github.com/swisskyrepo/SSRFmap.git
 git clone https://github.com/jonaslejon/malicious-pdf.git
-git clone https://github.com/edoardottt/cariddi.git; cd cariddi; go get; make linux
+git clone https://github.com/edoardottt/cariddi.git && cd cariddi && go get && make linux
 go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
 go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
 go get -u github.com/ffuf/ffuf
 git clone https://github.com/BuffaloWill/oxml_xxe.git
 git clone https://github.com/almandin/fuxploider.git
 git clone https://github.com/commixproject/commix.git
-
 
 cecho "Installing wordlists"
 cd /opt/wordlists
@@ -102,6 +100,6 @@ git clone https://github.com/liamg/traitor.git
 
 cecho "metasploit"
 cd /opt/metasploit
-curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
-  chmod 755 msfinstall && \
-  ./msfinstall
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb >msfinstall &&
+	chmod 755 msfinstall &&
+	./msfinstall
