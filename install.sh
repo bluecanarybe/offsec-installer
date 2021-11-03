@@ -15,6 +15,7 @@ mkdir -p /opt/payloads
 mkdir -p /opt/wordlists
 mkdir -p /opt/windows
 mkdir -p /opt/helpers
+mkdir -p /opt/post-exploitation
 
 # yellow text support
 
