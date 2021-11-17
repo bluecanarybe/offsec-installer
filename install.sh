@@ -39,6 +39,7 @@ go get -u github.com/tomnomnom/gron
 echo 'alias norg="gron --ungron' >>~/.zshrc
 echo 'alias ungron="gron --ungron"' >>~/.zshrc
 cd /opt/helpers && git clone https://github.com/tomnomnom/gf.git && echo 'source /opt/helpers/gf/gf-completion.zsh' >>~/.zshrc
+git clone https://github.com/Zarcolio/grepaddr && cd grepaddr && bash install.sh
 
 cecho "Installing zsh"
 apt-get -y install zsh
@@ -61,6 +62,7 @@ curl -sL https://raw.githubusercontent.com/epi052/feroxbuster/master/install-nix
 git clone https://github.com/nyxgeek/o365recon
 git clone https://github.com/robertdavidgraham/masscan
 git clone https://github.com/dogasantos/masstomap
+go install github.com/lc/gau/v2/cmd/gau@latest
 
 cecho "webtools"
 cd /opt/webtools
