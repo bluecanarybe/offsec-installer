@@ -40,7 +40,7 @@ go get -u github.com/tomnomnom/gron
 echo 'alias norg="gron --ungron' >>~/.zshrc
 echo 'alias ungron="gron --ungron"' >>~/.zshrc
 cd /opt/helpers && git clone https://github.com/tomnomnom/gf.git && echo 'source /opt/helpers/gf/gf-completion.zsh' >>~/.zshrc
-git clone https://github.com/Zarcolio/grepaddr && cd grepaddr && bash install.sh
+git clone https://github.com/Zarcolio/grepaddr && cd grepaddr && bash install.sh -auto
 
 cecho "Installing zsh"
 apt-get -y install zsh
