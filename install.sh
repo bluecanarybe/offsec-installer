@@ -55,7 +55,7 @@ apt-get -y install docker.io
 
 cecho "Installing recon"
 cd /opt/recon
-apt-get -y install nmap
+apt-get -y install nmap bloodhound
 git clone https://github.com/bluecanarybe/SubdomainEnum.git
 git clone https://github.com/FortyNorthSecurity/EyeWitness.git
 go install github.com/OJ/gobuster/v3@latest
@@ -64,6 +64,10 @@ git clone https://github.com/nyxgeek/o365recon
 git clone https://github.com/robertdavidgraham/masscan
 git clone https://github.com/dogasantos/masstomap
 go install github.com/lc/gau/v2/cmd/gau@latest
+git clone https://github.com:BlueCanary-DM/nmaparse.git
+wget https://gitlab.com/api/v4/projects/33695681/packages/generic/nrich/latest/nrich_latest_amd64.deb
+sudo dpkg -i nrich_latest_amd64.deb && nrich_latest_amd64.deb
+git clone https://github.com/Contrast-Labs/GetAWSTargets.git
 
 cecho "webtools"
 cd /opt/webtools
@@ -89,6 +93,7 @@ cecho "Installing wordlists"
 cd /opt/wordlists
 git clone https://github.com/danielmiessler/SecLists.git
 wget -nc http://downloads.skullsecurity.org/passwords/rockyou.txt.bz2
+git clone https://github.com/trustedsec/hate_crack.git
 apt-get -y install hashcat
 
 cecho "Installing windows/linux exploits"
@@ -101,6 +106,7 @@ git clone https://github.com/rebootuser/LinEnum.git
 git clone https://github.com/Veil-Framework/Veil-Evasion.git
 git clone https://github.com/lgandx/Responder
 git clone https://github.com/liamg/traitor.git
+https://github.com/trustedsec/SeeYouCM-Thief.git 
 
 cecho "metasploit"
 cd /opt/metasploit
