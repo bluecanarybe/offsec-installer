@@ -106,7 +106,7 @@ git clone https://github.com/rebootuser/LinEnum.git
 git clone https://github.com/Veil-Framework/Veil-Evasion.git
 git clone https://github.com/lgandx/Responder
 git clone https://github.com/liamg/traitor.git
-https://github.com/trustedsec/SeeYouCM-Thief.git 
+git clone https://github.com/trustedsec/SeeYouCM-Thief.git 
 
 cecho "metasploit"
 cd /opt/metasploit
