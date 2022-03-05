@@ -35,7 +35,7 @@ export PATH=$PATH:/usr/local/go/bin
 apt-get -y install python3-pip
 rm go1.17.2.linux-amd64.tar.gz
 
-cecho "Installing helpesr and QoL stuff"
+cecho "Installing helpers and QoL stuff"
 go get -u github.com/tomnomnom/gron
 echo 'alias norg="gron --ungron' >>~/.zshrc
 echo 'alias ungron="gron --ungron"' >>~/.zshrc
@@ -45,13 +45,13 @@ git clone https://github.com/Zarcolio/grepaddr && cd grepaddr && bash install.sh
 cecho "Installing zsh"
 apt-get -y install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 sed -i 's/robbyrussell/agnoster/' ~/.zshrc
 sed -i 's/^plugins=(\(.*\)/plugins=(zsh-autosuggestions zsh-syntax-highlighting \1/' ~/.zshrc
 
 cecho "Installing docker"
-apt-get -y install docker.io
+apt-get -y install docker.io unzip
 
 cecho "Installing recon"
 cd /opt/recon
